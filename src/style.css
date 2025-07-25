@@ -22,7 +22,7 @@ footer {
 	@apply max-w-[1180px] mx-auto px-5;
 	>.title{
 		font-family: "Noto Serif";
-		@apply text-[50px] font-semibold text-center mb-2;
+		@apply text-[24px] md:text-[50px] font-semibold text-center mb-2;
 	}
 	.para{
 		@apply text-[22px] text-gray-500;
@@ -82,13 +82,13 @@ header {
 #plants {
 	@apply text-center mb-52;
 	>p{
-		@apply px-[126px] mb-12;
+		@apply px-[28px] md:px-[126px] mb-12;
 	}
 	.card-container {
-		@apply flex flex-wrap gap-5;
+		@apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5;
 
 		.card {
-			@apply w-[270px];
+			@apply max-w-[270px];
 			span{@apply font-bold;}
 			h2{@apply font-semibold mt-[10px] mb-[5px]}
 			button{@apply bg-[var(--color)] text-white py-2 px-4 w-full mt-7;}
@@ -101,11 +101,11 @@ header {
 
 /* ---------------------Lover--------------------- */
 #lover {
-	@apply flex gap-15 items-center mb-[133.88px];
+	@apply flex flex-col sm:flex-row gap-15 items-center mb-[133.88px];
 	div:first-child{
 		@apply relative;
 		img:last-child{
-			@apply absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 h-[286px] w-[286px];
+			@apply hidden sm:block absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 h-[286px] w-[286px];
 		}
 	}
 	div{
@@ -114,10 +114,10 @@ header {
 		}
 	}
 	h1{
-		@apply text-[50px]
+		@apply text-[24px] md:text-[50px]
 	}
 	ul{
-		@apply list-disc text-[22px] space-y-4 text-gray-500;
+		@apply pl-[17px] sm:pl-0 list-disc text-[22px] space-y-4 text-gray-500;
 	}
 }
 
@@ -128,20 +128,20 @@ header {
 #deals {
 	@apply mb-30 text-center;
 	>p{
-		@apply px-[126px] mb-30;
+		@apply px-[28px] md:px-[126px] mb-30;
 	}
 	.image-container {
+		@apply flex flex-col gap-3 md:grid md:gap-6 md:grid-cols-3 md:[grid-template-rows:repeat(2,200px)];
 		div{
-			@apply relative flex flex-col justify-center items-center text-white;
+			@apply relative flex flex-col justify-center items-center text-white rounded-2xl overflow-hidden;
 		}
 		div::after {
             content: "";
             @apply absolute inset-0 bg-black/50; 
         }
 		div *{
-			@apply z-1;
+			@apply z-1 h-[100px] sm:h-auto rounded-2xl;
 		}
-		@apply grid gap-6 grid-cols-3 [grid-template-rows:repeat(2,200px)];
 		>div:nth-child(1) {
 			@apply bg-[url('../public/assets/deal-bloom.png')] bg-no-repeat bg-center bg-cover;
 		}
@@ -175,6 +175,6 @@ header {
 
 /* ---------------------Footer--------------------- */
 #footer {
-
+	@apply flex flex-col justify-around gap-4 md:grid md:grid-cols-4 md:gap-0;
 
 }
