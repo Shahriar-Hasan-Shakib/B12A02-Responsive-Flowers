@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+
+/* ---------------------Variables--------------------- */
+:root {
+	--white: #FFFFFF;
+	--black: #000000;
+	--light-black: rgba(0, 0, 0, 0.5);
+	--color: #E95A08;
+}
+
+
+
+
+/* ---------------------Section--------------------- */
+header,
+section,
+footer {
+	font-family: "Inter";
+	@apply max-w-[1180px] mx-auto px-5;
+	>.title{
+		font-family: "Noto Serif";
+		@apply text-[50px] font-semibold text-center mb-2;
+	}
+	.para{
+		@apply text-[22px] text-gray-500;
+	}
+}
+
+
+
+
+/* <---------------------Header---------------------> */
+header {
+	@apply flex  justify-between items-center py-[30px] ;
+	>img {
+		@apply h-[71px];
+	}
+
+	.logo {}
+
+	>div, nav>ul {
+		@apply flex gap-12;
+
+	}
+	nav{
+		@apply hidden sm:block;
+		>ul{
+			>li:nth-child(1) a {
+				@apply text-[var(--color)];
+			}
+			>li:nth-child(2) a {
+				@apply text-[var(--light-black)];
+			}
+			>li:nth-child(3) a {
+				@apply text-[var(--light-black)];
+			}
+		}
+	}
+}
+
+
+
+/* ---------------------Hero--------------------- */
+#hero {
+	@apply my-[120px] flex flex-col-reverse sm:flex-row justify-between items-end;
+	
+	h1{
+		@apply flex-1/2 sm:text-[65px] text-[24px]
+	}
+	img{
+		@apply flex-1/2
+	}
+}
+
+
+
+
+/* ---------------------Plants--------------------- */
+#plants {
+	@apply text-center mb-52;
+	>p{
+		@apply px-[126px] mb-12;
+	}
+	.card-container {
+		@apply flex flex-wrap gap-5;
+
+		.card {
+			@apply w-[270px];
+			span{@apply font-bold;}
+			h2{@apply font-semibold mt-[10px] mb-[5px]}
+			button{@apply bg-[var(--color)] text-white py-2 px-4 w-full mt-7;}
+		}
+	}
+}
+
+
+
+
+/* ---------------------Lover--------------------- */
+#lover {
+	@apply flex gap-15 items-center mb-[133.88px];
+	div:first-child{
+		@apply relative;
+		img:last-child{
+			@apply absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 h-[286px] w-[286px];
+		}
+	}
+	div{
+		@apply flex-1/2;
+		img:last-child{
+		}
+	}
+	h1{
+		@apply text-[50px]
+	}
+	ul{
+		@apply list-disc text-[22px] space-y-4 text-gray-500;
+	}
+}
+
+
+
+
+/* ---------------------Deals--------------------- */
+#deals {
+	@apply mb-30 text-center;
+	>p{
+		@apply px-[126px] mb-30;
+	}
+	.image-container {
+		div{
+			@apply relative flex flex-col justify-center items-center text-white;
+		}
+		div::after {
+            content: "";
+            @apply absolute inset-0 bg-black/50; 
+        }
+		div *{
+			@apply z-1;
+		}
+		@apply grid gap-6 grid-cols-3 [grid-template-rows:repeat(2,200px)];
+		>div:nth-child(1) {
+			@apply bg-[url('../public/assets/deal-bloom.png')] bg-no-repeat bg-center bg-cover;
+		}
+
+		div:nth-child(2) {
+			@apply col-span-2 row-span-2 bg-[url('../public/assets/deal-zabo.png')] bg-no-repeat bg-center bg-cover;
+		}
+
+		div:nth-child(3) {
+			@apply bg-[url('../public/assets/deal-ana.png')] bg-no-repeat bg-center bg-cover;
+		}
+	}
+}
+
+
+
+
+/* ---------------------Newsletter--------------------- */
+#newsletter {
+	@apply w-full bg-[url('../public/assets/news-letter-bg.png')] bg-no-repeat bg-center bg-cover py-50 text-center text-white;
+	input{
+		@apply w-[641px] h-[50px] px-5 bg-white text-gray-500;
+	}
+	button{
+		@apply h-[50px];
+	}
+}
+
+
+
+
+/* ---------------------Footer--------------------- */
+#footer {
+
+
+}
